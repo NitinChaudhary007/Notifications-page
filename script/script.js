@@ -20,10 +20,14 @@ function handleClick(event) {
     // console.log(event.target);
     // console.log(this.querySelector(".circle").classList.remove("circle"));
     this.querySelector(".circle").classList.add("displayNone");
-    this.classList.remove("unread");
-    if(countN>0) {
-        countN--;
-        document.querySelector(".count").textContent = countN;
+    let notifClasses=this.classList;
+    if(notifClasses[1]==='unread'){
+        this.classList.remove("unread");
+
+        if(countN>0) {
+            countN--;
+            document.querySelector(".count").textContent = countN;
+        }
     }
 }
 
